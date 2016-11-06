@@ -4,7 +4,7 @@ import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdStats;
 import edu.princeton.cs.algs4.Stopwatch;
 import edu.princeton.cs.algs4.Out;
-
+//import java.lang.Math;
 public class PercolationStats {
 
 	private Percolation per;
@@ -42,7 +42,8 @@ public class PercolationStats {
 				}
 			}
 			//Save the test result into result matrix
-			testResults[i] = per.numberOfOpenSites() / (N * N);
+			double nOpen = (double) per.numberOfOpenSites();
+			testResults[i] = nOpen / (N * N);
 		}
 	}
 
@@ -67,7 +68,15 @@ public class PercolationStats {
 	
 	public static void main(String[] args) {
 		Out out = new Out();
-		out.println(args[0]);
+		int n = Integer.parseInt(args[0]);
+		int t = Integer.parseInt(args[1]);
+		PercolationStats p = new PercolationStats(n,t);
+		double mean = p.mean();
+		double stddev = p.stddev();
+		out.println("% java PercolationStats " + n + " " + t);
+		out.println("mean                          = " + p.mean());
+		out.println("stddev                        = " + stddev);
+		out.println("95% confidence interval       = " + p.confidenceLow() +", " + p.confidenceHigh());
 	}
 }
 
