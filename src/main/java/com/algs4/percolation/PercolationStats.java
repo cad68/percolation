@@ -3,6 +3,7 @@ package com.algs4.percolation;
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdStats;
 import edu.princeton.cs.algs4.Stopwatch;
+import edu.princeton.cs.algs4.Out;
 
 public class PercolationStats {
 
@@ -63,4 +64,21 @@ public class PercolationStats {
 	{
 		return mean() + 1.96*stddev()/Math.sqrt(T);
 	}
+	
+	public static void main(String[] args) {
+		Out out = new Out();
+		out.println(args[0]);
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+

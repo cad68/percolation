@@ -2,7 +2,6 @@ package com.algs4.percolation;
 
 import edu.princeton.cs.algs4.Stopwatch;
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
-
 public class Percolation {
 	
 	private boolean[] per;

@@ -33,3 +33,13 @@ dependencies {
     //compile files('.libs/algs4.jar')
     compile fileTree(dir: 'libs', include: '*.jar')
 }
+
+//take parameters while run
+//runas:  gradle run -PappArgs="['arg1','arg2']"
+run {
+    if ( project.hasProperty("appArgs") ) {
+            args Eval.me(appArgs)
+	}
+}
+
+
